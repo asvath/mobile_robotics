@@ -6,7 +6,7 @@ The nuScenes dataset is a publicly available multimodal dataset by nuTonomy. The
 For the purposes of 2D object detection, we converted the given 3D bounding boxes into 2D bounding boxes. The global coordinates of the 8 corners of the 3D bounding boxes were provided and were converted into camera coordinates via the get_sample_data function provided by nuTonomy. The given functions can be accessed at www.nuscenes.org. We wrote our own function, all_3d_to_2d to convert the camera coordinates to the image coordinates by utilizing the intrinsic camera calibration matrices. The 2D bounding boxes were then extracted by taking the minimum and maximum of the x and y coordinates of the 3D bounding boxes via our extract_bounding_box function. These coordinates form the corners of our resulting 2D bounding boxes. All of our function cane be accessed in "nuscenes extract and write out 2d annotation boxes-revised to truncate bb.ipynb" (the bounding boxes are within the image frame). The figures below shows an example of 3D bounding boxes and the corresponding extracted 2D bounding boxes.
 
 ![alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/3d.png)
-![alt text] https://github.com/asvath/mobile_robotics/blob/master/final%20results/2dbb.png
+![alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/2dbb.png)
 
 
 
