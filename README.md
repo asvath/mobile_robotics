@@ -1,6 +1,6 @@
 # mobile_robotics
-##Goal: 2D object detection of pedestrians, cyclists and cars
-##A. Dataset Selection
+## Goal: 2D object detection of pedestrians, cyclists and cars
+## A. Dataset Selection
 
 
 
