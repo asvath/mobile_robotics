@@ -24,7 +24,7 @@ The Tiny You Only Look Once (Tiny YOLO) algorithm utilizes features learned by a
 box. In addition, predefined shapes called anchor boxes enable the detection of multiple objects whose centers fall within the same grid cell. Each object is associated with the anchor box with the highest IoU. The K-means clustering algorithm isused to determine the height and width of the anchor boxes. Each bounding box prediction is a vector. The components of the vectors are the following: confidence score of object detection, x,y coordinates of the center of the bounding box,the height and width h,w of the bounding box and C class probabilities. If there are A anchor boxes, the vector is A(5+C) in dimension.
 
 The figure below shows the results from the K-means algorithm (k means clustering.ipynb)
-![alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/IOU_clusters.png){:height="50%" width="50%"}
+![alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/IOU_clusters.png&s=50)
 
 ## C. Metric for comparing the performance of different models
 The mean average (mAP) is a metric that is used to compare the performance of different models. It is the area under the precision-recall curve. High precision indicates having a high detection of true positives and a low detection of false positives. While, high recall, indicates having a high detection of true positives and a low detection of false negatives.
