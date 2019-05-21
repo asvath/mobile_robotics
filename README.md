@@ -35,16 +35,16 @@ hyperparameters: resolution and subdivision. In addition, we changed the default
 
 ## Results
 The 5 different versions of the Tiny YOLO v3 model were trained by tuning the following hyperparameters: resolution and subdivision. The trained models were then validated using the validation dataset. The results from the validation is shown below.
-TABLE III. VALIDATION OF TRAINED MODELS
-Validation Results
-Resolution Batch Subdivision
-Highest mAP(%) at IoU Threshold
-(50%)
-416 64 2 48.32
-416 64 8 48.51
-512 64 16 36.39
-832 64 8 61.76
-832 64 32 61.46
+TABLE VALIDATION OF TRAINED MODELS
+| Resolution       | Batch           | Subdivision           | Highest mAP(%) at IoU Threshold
+(50%)  |
+| ------------- |:-------------:| -----:|
+| 416     | 64 | 2 | 48.32 |
+| 416      | 64      |   8 | 48.51 |
+| 832 | 64      |    8 | 61.76 |
+| 832 | 64      |    32 | 61.46 |
+ 
+
 The mean average precision value is the area under the
 precision and recall curve. It is a metric that is used to
 compare the performance of various models. The model with
