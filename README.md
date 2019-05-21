@@ -24,7 +24,7 @@ The Tiny You Only Look Once (Tiny YOLO) algorithm utilizes features learned by a
 box. In addition, predefined shapes called anchor boxes enable the detection of multiple objects whose centers fall within the same grid cell. Each object is associated with the anchor box with the highest IoU. The K-means clustering algorithm isused to determine the height and width of the anchor boxes. Each bounding box prediction is a vector. The components of the vectors are the following: confidence score of object detection, x,y coordinates of the center of the bounding box,the height and width h,w of the bounding box and C class probabilities. If there are A anchor boxes, the vector is A(5+C) in dimension.
 
 The figure below shows the results from the K-means algorithm (k means clustering.ipynb)
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/IOU_clusters.png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/IOU_clusters.png" width="800" height="600">
 
 We chose to use 6 anchor boxes as the average IOU was reasonable value of approx 60% and also the default number of anchor boxes used by Tiny YOLO v3 is 6. Increasing the number of anchor boxes will increase the number of parameters used.
 
@@ -56,7 +56,7 @@ different confidence score thresholds the figure below.
 <img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="800" height="600">
 
 The loss during the training of the model with resolution 832 and subdivision 8, declined rapidly before stagnating at 1.2 as shown in the figure below. Further training will probably not improve the model’s performance. The mAP value reached a maximum of 61.76% at iteration 11, 000. Hence the weights from this iteration was used as our final weights. The mAP score declined after iteration 11,000. The decline could be due to overfitting. This could be verified by training the model for several more iterations and determining if the declining mAP trend continues. This model had the highest mAP score out of all trained models; and was thus chosen as the model for further analysis.
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/plot_832_64_8%20(1).png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/plot_832_64_8%20(1).png" width="800" height="600">
 ### 2. Selection of Confidence Score Threshold
 The default confidence score threshold of Tiny YOLO v3 during detection is 25%. At this threshold, the precision, recall and F1-scores are 0.81, 0.57 and 0.67 respectively.
 The high precision of 0.81, indicates low false positives and the low recall value of 0.57 indicates high false negatives.The figure below shows an instance of detection at the threshold of 25%. A pedestrian at the crosswalk was not detected despite their proximity to the car. The pedestrian was thus a false negative. Scenarios such as this must be avoided as it could lead to dangerous driving by the autonomous vehicle. Hence a confidence score threshold needs to be selected with a high recall value.
@@ -65,11 +65,11 @@ The high precision of 0.81, indicates low false positives and the low recall val
 ![alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/ped_10.png)
 
 The figure below the F1 scores vs. confidence score threshold, where a high F1 indicates a high precision and high recall value. This occurs at threshold 20% with F1 score of 0.68, precision of 0.78 and recall of 0.60.
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_f1%20(1).png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_f1%20(1).png" width="800" height="600">
 
 
 The figure below shows the recall vs confidence score threshold. The highest recall value of 0.73 occurs at a threshold of 5%, however the F1-score is 0.62 and the precision is 0.54. 
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_recall_vs_threshold.png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_recall_vs_threshold.png" width="800" height="600">
 
 While having a high recall is paramount for purposes of autonomous driving, we also want to ensure that the tradeoff between precision and recall is low, as too many false positives could potentially lead to situations where the autonomous vehicle is unable to function. Hence, we chose a confidence threshold of 10%, where the precision and recall are high and also comparable in values; in addition, the F1 score of 0.67 is close to the highest F1 score of 0.68. At 10% confidence the precision is 0.66, recall is 0.68, and F1-score is 0.67.
 
