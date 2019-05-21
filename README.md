@@ -38,7 +38,7 @@ The 5 different versions of the Tiny YOLO v3 model were trained by tuning the fo
 TABLE VALIDATION OF TRAINED MODELS
 | Resolution       | Batch           | Subdivision           | Highest mAP(%) at IoU Threshold
 (50%)  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:| -----:| -----:|
 | 416     | 64 | 2 | 48.32 |
 | 416      | 64      |   8 | 48.51 |
 | 832 | 64      |    8 | 61.76 |
