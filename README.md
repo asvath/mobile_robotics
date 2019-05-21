@@ -35,8 +35,7 @@ hyperparameters: resolution and subdivision. In addition, we changed the default
 
 ## Results
 The 4 different versions of the Tiny YOLO v3 model were trained by tuning the following hyperparameters: resolution and subdivision. The trained models were then validated using the validation dataset. The results from the validation is shown below.
-
-|TABLE VALIDATION OF TRAINED MODELS|
+### TABLE VALIDATION OF TRAINED MODELS|\
 | Resolution  | Batch | Subdivision | Highest mAP(%) at IoU Threshold (50%) |
 | ------------- | ------------- | ------------- | ------------- |
 | 416  | 64  | 2  | 48.32  |
