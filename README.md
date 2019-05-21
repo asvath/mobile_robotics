@@ -52,7 +52,7 @@ selected as the best performing model as it has the highest
 mAP score of 61.76% at the IoU threshold of 50%. The
 Precision and Recall curve of the selected model is shown at
 different confidence score thresholds the figure below. 
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50.png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="500" height="500">
 
 The Confidence score threshold of 10% was selected for
 detection. At this threshold, the precision is 0.66, recall is
