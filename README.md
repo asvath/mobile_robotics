@@ -58,3 +58,6 @@ detection. At this threshold, the precision is 0.66, recall is
 0.68, and F-1 score is 0.67 respectively.
 The average precision values for pedestrians, cars and
 cyclists are 54.78%, 76.17% and 54.33% respectively.
+
+##YouTube Video
+[![Alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/Capture.JPG)](https://www.youtube.com/watch?v=hmpNFlYn0yo&feature=youtu.be&fbclid=IwAR167HZ5qLn4Co63pQxlnsFPsgUeM3Pq84B0FmO7yLNVyffIRLjVCSNJv9w)
