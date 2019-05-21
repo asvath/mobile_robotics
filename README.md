@@ -53,7 +53,7 @@ selected as the best performing model as it has the highest
 mAP score of 61.76% at the IoU threshold of 50%. The
 Precision and Recall curve of the selected model is shown at
 different confidence score thresholds the figure below. 
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="800" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="800" height="600">
 
 The loss during the training of the model with resolution 832 and subdivision 8, declined rapidly before stagnating at 1.2 as shown in the figure below. Further training will probably not improve the model’s performance. The mAP value reached a maximum of 61.76% at iteration 11, 000. Hence the weights from this iteration was used as our final weights. The mAP score declined after iteration 11,000. The decline could be due to overfitting. This could be verified by training the model for several more iterations and determining if the declining mAP trend continues. This model had the highest mAP score out of all trained models; and was thus chosen as the model for further analysis.
 <img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/plot_832_64_8%20(1).png" width="500" height="500">
