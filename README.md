@@ -44,10 +44,12 @@ TABLE VALIDATION OF TRAINED MODELS
 | 832           | 64          | 8           | 61.76       |
 | 832           | 64          | 32          | 61.46       |
 
-| First Header  | Second Header | Second Header |
-| ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| Resolution  | Batch | Subdivision | Highest mAP(%) at IoU Threshold (50%) |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
  
 
 The mean average precision value is the area under the
