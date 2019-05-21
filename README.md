@@ -53,7 +53,7 @@ selected as the best performing model as it has the highest
 mAP score of 61.76% at the IoU threshold of 50%. The
 Precision and Recall curve of the selected model is shown at
 different confidence score thresholds the figure below. 
-<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="500" height="500">
+<img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_50%20(1).png" width="800" height="800">
 
 The loss during the training of the model with resolution 832 and subdivision 8, declined rapidly before stagnating at 1.2 as shown in the figure below. Further training will probably not improve the model’s performance. The mAP value reached a maximum of 61.76% at iteration 11, 000. Hence the weights from this iteration was used as our final weights. The mAP score declined after iteration 11,000. The decline could be due to overfitting. This could be verified by training the model for several more iterations and determining if the declining mAP trend continues. This model had the highest mAP score out of all trained models; and was thus chosen as the model for further analysis.
 <img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/plot_832_64_8%20(1).png" width="500" height="500">
@@ -76,7 +76,7 @@ While having a high recall is paramount for purposes of autonomous driving, we a
 
 The average precision (ap) values for the pedestrians, cars and cyclists classes are 54.78%, 76.17% and 54.33% respectively. The car class has the highest ap value of 76.17%. This could be due to the symmetric nature of cars, thus enabling the model to learn the features better. In addition, we had over 20, 000 car annotations. Despite having a comparable number of pedestrian annotations, the ap for pedestrians was much lower. This could be due to the diversity in pedestrian features. 
 
-### 2. Test on nuScenes
+### 3. Test on nuScenes
 We tested our selected model on the test dataset. A mAP score of 63.39% at IoU threshold of 50% was achieved. At confidence threshold of 10%, the precision, recall and F1-score are 0.67, 0.69 and 0.68 respectively. The average precision values for pedestrians, cars and cyclists are 55.41%, 76.72% and 58.04% respectively. The mAP scores during validation and testing are 61.76% and 63.39% respectively The difference is 1.63%. The difference in mAP score is insignificant. Thus, we conclude that our model generalizes well and was not overfitted.
 
 ## E. Future Work
