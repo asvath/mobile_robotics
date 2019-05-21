@@ -57,7 +57,7 @@ different confidence score thresholds the figure below.
 
 The loss during the training of the model with resolution 832 and subdivision 8, declined rapidly before stagnating at 1.2 as shown in the figure below. Further training will probably not improve the model’s performance. The mAP value reached a maximum of 61.76% at iteration 11, 000. Hence the weights from this iteration was used as our final weights. The mAP score declined after iteration 11,000. The decline could be due to overfitting. This could be verified by training the model for several more iterations and determining if the declining mAP trend continues. This model had the highest mAP score out of all trained models; and was thus chosen as the model for further analysis.
 <img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/plot_832_64_8%20(1).png" width="500" height="500">
-### Selection of Confidence Score Threshold
+### 2. Selection of Confidence Score Threshold
 The default confidence score threshold of Tiny YOLO v3 during detection is 25%. At this threshold, the precision, recall and F1-scores are 0.81, 0.57 and 0.67 respectively.
 The high precision of 0.81, indicates low false positives and the low recall value of 0.57 indicates high false negatives.The figure below shows an instance of detection at the threshold of 25%. A pedestrian at the crosswalk was not detected despite their proximity to the car. The pedestrian was thus a false negative. Scenarios such as this must be avoided as it could lead to dangerous driving by the autonomous vehicle. Hence a confidence score threshold needs to be selected with a high recall value.
 
@@ -71,14 +71,17 @@ The figure below the F1 scores vs. confidence score threshold, where a high F1 i
 The figure below shows the recall vs confidence score threshold. The highest recall value of 0.73 occurs at a threshold of 5%, however the F1-score is 0.62 and the precision is 0.54. 
 <img src="https://github.com/asvath/mobile_robotics/blob/master/final%20results/nuval_recall_vs_threshold.png" width="500" height="500">
 
-While having a high recall is paramount for purposes of autonomous driving, we also want to ensure that the tradeoff between precision and recall is low, as too many false positives could potentially lead to situations where the autonomous vehicle is unable to function. Hence, we chose a confidence threshold of 10%, where the precision and recall are high and also comparable in values; in addition, the F1 score of 0.67 is close to the highest F1 score of 0.68. At 10% confidence the precision is 0.66, recall is 0.68, and F1-score is 0.67 as mentioned in Results Section A
-Lowering the threshold to 10% allowed the pedestrian to be detected as highlighted in Fig. 6
-The average precision (ap) values for the classes being detected were also mentioned in Results Section A. The car class has the highest ap value of 76.17%. This could be due to the symmetric nature of cars, thus enabling the model to learn the features better. In addition, we had over 20, 000 car annotations. Despite having a comparable number of pedestrian annotations, the ap for pedestrians was much lower. This could be due to the diversity in pedestrian features. We also found that most of the pedestrians in our training set were in the background as opposed to the foreground. This is shown in Fig. 9
-The Confidence score threshold of 10% was selected for
-detection. At this threshold, the precision is 0.66, recall is
-0.68, and F-1 score is 0.67 respectively.
-The average precision values for pedestrians, cars and
-cyclists are 54.78%, 76.17% and 54.33% respectively.
+While having a high recall is paramount for purposes of autonomous driving, we also want to ensure that the tradeoff between precision and recall is low, as too many false positives could potentially lead to situations where the autonomous vehicle is unable to function. Hence, we chose a confidence threshold of 10%, where the precision and recall are high and also comparable in values; in addition, the F1 score of 0.67 is close to the highest F1 score of 0.68. At 10% confidence the precision is 0.66, recall is 0.68, and F1-score is 0.67.
 
-##YouTube Video
+
+The average precision (ap) values for the pedestrians, cars and cyclists classes are 54.78%, 76.17% and 54.33% respectively. The car class has the highest ap value of 76.17%. This could be due to the symmetric nature of cars, thus enabling the model to learn the features better. In addition, we had over 20, 000 car annotations. Despite having a comparable number of pedestrian annotations, the ap for pedestrians was much lower. This could be due to the diversity in pedestrian features. 
+
+### 2. Test on nuScenes
+We tested our selected model on the test dataset. A mAP score of 63.39% at IoU threshold of 50% was achieved. At confidence threshold of 10%, the precision, recall and F1-score are 0.67, 0.69 and 0.68 respectively. The average precision values for pedestrians, cars and cyclists are 55.41%, 76.72% and 58.04% respectively. The mAP scores during validation and testing are 61.76% and 63.39% respectively The difference is 1.63%. The difference in mAP score is insignificant. Thus, we conclude that our model generalizes well and was not overfitted.
+
+## E. Future Work
+For the training of our models, we had utilized the teaser release of nuScenes consisting of 23,727 images. However, nuTonomy has since released the full nuScenes dataset consisting of 1.4 million images. These images include scenes that have diverse weather conditions. Furthermore, the full dataset has close to 12,000 annotations of bicycles (with and without a rider). Thus, we could increase the number of cyclists in our training dataset and also add more diversity by incorporating some of the new data. We should also further explore the confidence score threshold value. We had selected 10% as threshold for the detection of all classes. However, in practice, we should have different thresholds for different classes. For instance, pedestrians and cyclists should be detected with a lower threshold than cars. This is due to pedestrians and cyclists possessing more risks and we want to drive more conservatively around them. Next, the feasibility of running Tiny YOLO v3 in real time should also be verified. Finally, object tracking could also be a extension of our work. It enables learning about the behaviour of agents surrounding the autonomous vehicle, thus decisions based on predictive behaviour can be made. For instance, if a pedestrian is predicted to be a high-risk jaywalker, the autonomous vehicle should take that into account and drive more conservatively.
+
+## F. YouTube Video
+We ran our selected model on a dashcam video (the resolution differs from nuScenes).
 [![Alt text](https://github.com/asvath/mobile_robotics/blob/master/final%20results/Capture.JPG)](https://www.youtube.com/watch?v=hmpNFlYn0yo&feature=youtu.be&fbclid=IwAR167HZ5qLn4Co63pQxlnsFPsgUeM3Pq84B0FmO7yLNVyffIRLjVCSNJv9w)
