@@ -2,7 +2,7 @@
 ## Goal: 2D object detection of pedestrians, cyclists and cars
 ## A. Dataset Selection
 
-
+Credit: nuScenes: A multimodal dataset for autonomous driving https://arxiv.org/abs/1903.11027
 
 
 The nuScenes dataset is a publicly available multimodal dataset by nuTonomy. The data was gathered in Boston and Singapore; two mega cities with busy traffic, thus ensuring a diverse scenario of traffic situations. The initial release of the dataset comprises of 23,772, 1600 x 900, images with 3D annotations of 23 classes. Objects were annotated by considering the full suite of sensors, 6 cameras, 1 Lidar and 5 Radar. Each annotated object was covered by at least one lidar or radar point; hence even objects with low visibility: 0% to 40% visibility were annotated. The annotations were done by expert annotators and numerous validation steps were performed to ensure the quality of the annotations. The diversity and quality of the annotations is why nuScenes was selected for our project.
@@ -16,7 +16,7 @@ For the purposes of 2D object detection, we converted the given 3D bounding boxe
 We only acquired the 2D bounding boxes for objects whose visibility exceeded 40% and whose center fall within the image boundaries. This is to ensure that the extracted bounding box annotations were similar to that of data only acquired only via cameras. We also combined the 'adult', ‘child’, ‘police officer’ and ‘construction worker’ classes together to form our pedestrian class. The final dataset consists of 20,273 pedestrian annotations, 26,202 car annotations and 1,588 cyclist annotations. This amounts to 48,063 annotations in total.
 We generated the train dataset, validation dataset and test dataset by randomly splitting the nuScenes dataset into 70% for training, 15% for validation and 15% for testing. The train dataset consists of 16,640 images, the validation dataset and test dataset consist of 3,566 images respectively. (Code to split dataset: train validation test -Copy2.ipynb)
 
-Credit: nuScenes: A multimodal dataset for autonomous driving https://arxiv.org/abs/1903.11027
+
 
 
 ## B. Tiny YOLO v3
